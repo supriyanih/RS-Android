@@ -1,0 +1,71 @@
+<ion-view view-title="DOKTER">
+   <ion-nav-buttons side="right">
+      <button class="button" ng-click="modalDokter('Tambah')">
+        Tambah
+      </button>
+   </ion-nav-buttons>
+    <ion-content>
+                 <ion-refresher on-refresh="tampilData()"></ion-refresher>
+
+        <ion-list>
+            <div class="card list"ng-repeat="dok in dokter" >
+
+
+                <div class="item item-divider">
+                    <div class="row ">
+                        <div class="col "><h4>DID</h4></div>
+                        <div class="col "><h4>{{ dok.did}}</h4></div>
+
+                    </div>
+                    <h2></h2>
+                </div>
+
+
+                <ion-item style="margin:  0; padding: 0; margin-bottom: 0; padding-bottom: 0;">
+                    <div class="row row-top">
+                        <div class="col"><h4>NAME</h4></div>
+                        <div class="col"><h4>:{{dok.nama}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>SPESIALIS</h4></div>
+                        <div class="col"><h4>:{{dok.spesialis}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>ALAMAT</h4></div>
+                        <div class="col"><h4>:{{dok.alamat}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>PHONE</h4></div>
+                        <div class="col"><h4>:{{dok.phone}}</h4></div>
+                    </div>  
+                     
+                    <div class="row">
+                        
+                            <div class="row">
+                                <div class="col">
+                                    <button class="button button-calm button-bar button-small " data-ng-click="modalDokter('Edit', dok.did,$index)">
+                                        <i title="edit" class="icon ion-edit"></i>
+                                        Edit
+                                    </button>
+                                   
+                                </div>
+                                <div class="col">
+                                    <button class="button button-bar button-assertive button-small" data-ng-click="delete(dok.did)">
+                                        <i  title="hapus"class="icon ion-trash-a"></i>
+                                        Hapus
+                                    </button>
+                                </div>
+                            </div>
+                        
+                    </div>  
+
+                </ion-item >
+
+
+            </div>
+
+        </ion-list>
+
+
+    </ion-content>
+</ion-view>

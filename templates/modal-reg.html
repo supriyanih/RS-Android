@@ -1,0 +1,63 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">{{action}}</h1>
+        <div class="buttons">
+            <button class="button button-icon" ng-click="close()">
+                
+                <i class="icon ion-close-circled">
+                 Tutup 
+                </i>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        
+        <ion-list>
+             <label class="item item-input">
+        <span class="input-label">REGPID</span>
+        <input type="text" name="regpid" ng-model="dataReg.regpid" readonly>
+        
+        </label>
+        <label class="item item-input">
+        <span class="input-label">TGL REG</span>
+        <input type="text" placeholder="Pick date" name="tanggal_reg" ng-model="dataReg.tanggal_reg" ng-click="opendateModal()" 
+	          readonly>
+        </label>
+        
+        <label class="item item-input item-select ">
+        <span class="input-label">DOKTER</span>
+        <select type="text" name="id_dokter" ng-model="dataReg.id_dokter">
+           
+            <option ng-repeat="dok in dokter" value="{{dok.did}}">{{dok.nama}}</option>
+           
+        </select>
+        </label>
+        <label class="item item-input">
+        <span class="input-label">bayar</span>
+        <input type="text" name="bayar" ng-model="dataReg.bayar">
+        </label>
+        <label class="item item-input item-select">
+        <span class="input-label">PASIEN</span>
+        
+        <select type="text" name="id_pasien" ng-model="dataReg.id_pasien">
+          
+            <option ng-repeat="pasi in pasien" value="{{pasi.pid}}">{{pasi.name_real}}</option>
+           
+        </select>
+        </label>
+       <label class="item item-input item-select">
+        <span class="input-label">selesai</span>
+        
+        <select type="text" name="selesai" ng-model="dataReg.selesai">
+           
+            <option  selected value="Y">YA</option>
+            <option value="T">TIDAK</option>
+        </select>
+        </label>
+        </div>
+
+        <button class="button button-full button-positive" data-ng-click="save(action)">Simpan</button>
+        </ion-list>
+         
+    </ion-content>
+</ion-modal-view>

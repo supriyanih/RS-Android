@@ -1,0 +1,78 @@
+<ion-view view-title="REGISTRASI">
+   <ion-nav-buttons side="right">
+      <button class="button" ng-click="modalReg('Tambah')">
+        Tambah
+      </button>
+   </ion-nav-buttons>
+    <ion-content>
+                 <ion-refresher on-refresh="tampilData()"></ion-refresher>
+
+        <ion-list>
+            <div class="card list"ng-repeat="pas in reg" >
+
+
+                <div class="item item-divider">
+                    <div class="row ">
+                        <div class="col "><h4>TGL REG</h4></div>
+                        <div class="col "><h4>{{ pas.tanggal_reg}}</h4></div>
+
+                    </div>
+                    <h2></h2>
+                </div>
+
+
+                <ion-item style="margin:  0; padding: 0; margin-bottom: 0; padding-bottom: 0;">
+                    <div class="row row-top">
+                        <div class="col"><h4>REGPID</h4></div>
+                        <div class="col"><h4>:{{pas.regpid}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>DOKTER</h4></div>
+                        <div class="col"><h4>:{{pas.nama}}( {{pas.spesialis}} )</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>BAYAR</h4></div>
+                        <div class="col"><h4>:Rp.{{pas.bayar}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>PID</h4></div>
+                        <div class="col"><h4>:{{pas.pid}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>PASIEN</h4></div>
+                        <div class="col"><h4>:{{pas.name_real}}</h4></div>
+                    </div> 
+                    <div class="row">
+                        <div class="col"><h4>SELESAI</h4></div>
+                        <div class="col"><h4>:{{pas.selesai}}</h4></div>
+                    </div>
+                    <div class="row">
+                        
+                            <div class="row">
+                                <div class="col">
+                                    <button class="button button-calm button-bar button-small " data-ng-click="modalReg('Edit', pas.regpid,$index)">
+                                        <i title="edit" class="icon ion-edit"></i>
+                                        Edit
+                                    </button>
+                                   
+                                </div>
+                                <div class="col">
+                                    <button class="button button-bar button-assertive button-small" data-ng-click="delete(pas.regpid)">
+                                        <i  title="hapus"class="icon ion-trash-a"></i>
+                                        Hapus
+                                    </button>
+                                </div>
+                            </div>
+                        
+                    </div>  
+
+                </ion-item >
+
+
+            </div>
+
+        </ion-list>
+
+
+    </ion-content>
+</ion-view>

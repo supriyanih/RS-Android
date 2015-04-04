@@ -1,0 +1,57 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">{{action}}</h1>
+        <div class="buttons">
+            <button class="button button-icon" ng-click="close()">
+                
+                <i class="icon ion-close-circled">
+                 Tutup 
+                </i>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        
+        <ion-list>
+             <label class="item item-input">
+        <span class="input-label">PID</span>
+        <input type="text" name="pid" ng-model="dataPasien.pid" readonly>
+        
+        </label>
+        <label class="item item-input">
+        <span class="input-label">NAME REAL</span>
+        <input type="text" name="name_real" ng-model="dataPasien.name_real">
+        </label>
+        <label class="item item-input">
+        <span class="input-label">ADDRESS</span>
+       
+        <textarea name="address" ng-model="dataPasien.address"></textarea>
+        </label>
+        <label class="item item-input item-select ">
+        <span class="input-label">DEATH</span>
+        <select type="text" name="death" ng-model="dataPasien.death">
+            <option  selected value="YES">YES</option>
+            <option value="NO">NO</option>
+        </select>
+        </label>
+        <label class="item item-input">
+        <span class="input-label">PHONE</span>
+        <input type="text" name="phone" ng-model="dataPasien.phone">
+        </label>
+        <label class="item item-input item-select">
+        <span class="input-label">SEX</span>
+        
+        <select type="text" name="sex" ng-model="dataPasien.sex">
+           
+            <option  selected value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+        </label>
+       
+        </div>
+
+        <button class="button button-full button-positive" data-ng-click="save(action)">Simpan</button>
+        </ion-list>
+         
+    </ion-content>
+</ion-modal-view>

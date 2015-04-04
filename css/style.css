@@ -1,0 +1,17 @@
+/* Empty. Add your own CSS if you like */
+.bar-balanced{
+    box-shadow: 0px 5px 5px grey;
+}
+
+.bar-positive{
+    box-shadow: 0px 5px 5px grey;
+}
+
+.tabs-positive{
+    box-shadow: 0px 5px 5px grey;
+}
+.item-dividert{
+    border-top-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    background: #33cd5f;
+}

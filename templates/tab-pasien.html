@@ -1,0 +1,74 @@
+<ion-view view-title="PASIEN">
+   <ion-nav-buttons side="right">
+      <button class="button" ng-click="modalPasien('Tambah')">
+        Tambah
+      </button>
+   </ion-nav-buttons>
+    <ion-content>
+         <ion-refresher on-refresh="tampilData()"></ion-refresher>
+        
+        <ion-list>
+            <div class="card list"ng-repeat="pas in pasien" >
+
+
+                <div class="item item-divider">
+                    <div class="row ">
+                        <div class="col "><h4>PID</h4></div>
+                        <div class="col "><h4>{{ pas.pid}}</h4></div>
+
+                    </div>
+                    <h2></h2>
+                </div>
+
+
+                <ion-item style="margin:  0; padding: 0; margin-bottom: 0; padding-bottom: 0;">
+                    <div class="row row-top">
+                        <div class="col"><h4>NAME REAL</h4></div>
+                        <div class="col"><h4>:{{pas.name_real}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>ADRESS</h4></div>
+                        <div class="col"><h4>:{{pas.address}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>DEATH</h4></div>
+                        <div class="col"><h4>:{{pas.death}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>PHONE</h4></div>
+                        <div class="col"><h4>:{{pas.phone}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col"><h4>SEX</h4></div>
+                        <div class="col"><h4>:{{pas.sex}}</h4></div>
+                    </div>  
+                    <div class="row">
+                        
+                            <div class="row">
+                                <div class="col">
+                                    <button class="button button-calm button-bar button-small " data-ng-click="modalPasien('Edit', pas.pid,$index)">
+                                        <i title="edit" class="icon ion-edit"></i>
+                                        Edit
+                                    </button>
+                                   
+                                </div>
+                                <div class="col">
+                                    <button class="button button-bar button-assertive button-small" data-ng-click="delete(pas.pid)">
+                                        <i  title="hapus"class="icon ion-trash-a"></i>
+                                        Hapus
+                                    </button>
+                                </div>
+                            </div>
+                        
+                    </div>  
+
+                </ion-item >
+
+
+            </div>
+
+        </ion-list>
+
+
+    </ion-content>
+</ion-view>
